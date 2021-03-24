@@ -14,6 +14,7 @@ public class TickerPrice {
    * Ticker symbol.
    */
   private String symbol;
+  private String priceChangePercent;
 
   /**
    * Latest price.
@@ -26,6 +27,14 @@ public class TickerPrice {
 
   public void setSymbol(String symbol) {
     this.symbol = symbol;
+  }
+  
+   public String getPriceChangePercent() {
+    return priceChangePercent;
+  }
+
+  public void setPriceChangePercent(String priceChangePercent) {
+    this.priceChangePercent = priceChangePercent;
   }
 
   public String getPrice() {
@@ -41,6 +50,7 @@ public class TickerPrice {
     return new ToStringBuilder(this, BinanceApiConstants.TO_STRING_BUILDER_STYLE)
         .append("symbol", symbol)
         .append("price", price)
+        .append("priceChangePercent", priceChangePercent)
         .toString();
   }
 }
